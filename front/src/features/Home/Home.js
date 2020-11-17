@@ -1,6 +1,9 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchBooks, setPage, selectBooks } from "./Home.slice";
+import { fetchBooks, selectBooks } from "./Home.slice";
+import Book from "./Components/Book";
+import Pager from "./Components/Pager";
+import Loader from "./Components/Loader";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -12,39 +15,24 @@ const Home = () => {
     dispatch(fetchBooks(url));
   }, [dispatch, url]);
 
-  const changePage = (num) => {
-    dispatch(setPage(num));
-  };
+  if (loading || !data.data) {
+    return <Loader msg="Loading..." />;
+  }
+
+  if (error) {
+    return <Loader msg="Error" />;
+  }
 
   return (
     <section>
-      {loading || !data.data ? (
-        <p>Loading...</p>
-      ) : error ? (
-        <p>Error</p>
-      ) : (
-        <>
-          <ul>
-            {data.data.map((el) => (
-              <li key={el.id}>{el.title}</li>
-            ))}
-          </ul>
-          <ul>
-            {Array(Math.ceil(data.metadata.total_records / 10))
-              .fill()
-              .map((el, idx) => (
-                <li key={idx + 1}>
-                  <button
-                    onClick={() => changePage(idx + 1)}
-                    disabled={idx + 1 === page}
-                  >
-                    {idx + 1}
-                  </button>
-                </li>
-              ))}
-          </ul>
-        </>
-      )}
+      <ul>
+        {data.data.map((el) => (
+          <li key={el.id}>
+            <Book data={el} />
+          </li>
+        ))}
+      </ul>
+      <Pager />
     </section>
   );
 };
