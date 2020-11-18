@@ -1,8 +1,6 @@
 import React from "react";
-
+import CartButton from "../../Cart/components/CartButton";
 const Book = ({ data }) => {
-  const handleAddToCart = () => {};
-
   return (
     <figure>
       <img src={data.cover_url} alt={`${data.title} cover`} />
@@ -12,7 +10,7 @@ const Book = ({ data }) => {
         <p>Pages: {data.pages}</p>
         <p>Price: {`${data.price / 100} ${data.currency}`}</p>
       </figcaption>
-      <button onClick={handleAddToCart}>Add to Cart</button>
+      <CartButton item={data} />
     </figure>
   );
 };
