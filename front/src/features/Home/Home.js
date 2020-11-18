@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchBooks, selectBooks } from "./Home.slice";
-import Book from "./Components/Book";
-import Pager from "./Components/Pager";
-import Loader from "./Components/Loader";
+import Book from "./components/Book";
+import Pager from "./components/Pager";
+import Loader from "./components/Loader";
 
 const Home = () => {
   const dispatch = useDispatch();
