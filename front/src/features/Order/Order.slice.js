@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { clearCart } from "../Cart/Cart.slice";
 
 const initialState = {
   first_name: "",
@@ -65,6 +66,7 @@ export const orderBooks = createAsyncThunk(
       .then((res) => res.json())
       .then((res) => {
         thunkAPI.dispatch(responseOrder(res));
+        thunkAPI.dispatch(clearCart());
         console.log(res);
       });
   }

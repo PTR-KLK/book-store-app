@@ -18,7 +18,7 @@ const Cart = () => {
           );
         })}
       </ul>
-      <Link to="/order">Order</Link>
+      {cart.length > 0 ? <Link to="/order">Order</Link> : <p>Order</p>}
     </section>
   );
 };
