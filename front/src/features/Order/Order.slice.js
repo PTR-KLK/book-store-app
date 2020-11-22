@@ -42,14 +42,10 @@ export const orderBooks = createAsyncThunk(
   "order/orderBooks",
   async (url, thunkAPI) => {
     const { first_name, last_name, city, zip_code } = thunkAPI.getState().order;
+    const { list } = thunkAPI.getState().cart;
 
     const body = {
-      order: [
-        {
-          id: 457,
-          quantity: 1,
-        },
-      ],
+      order: list.map((el) => ({ id: el.id, quantity: el.quantity })),
       first_name: first_name,
       last_name: last_name,
       city: city,
