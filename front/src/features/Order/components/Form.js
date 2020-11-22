@@ -29,12 +29,16 @@ const Order = () => {
         name="fname"
         value={first_name}
         callaback={changeFirstName}
+        pattern="[\w]{3,}"
+        title="At least 3 letters"
       />
       <TextInput
         label="Last Name"
         name="fname"
         value={last_name}
         callaback={changeLastName}
+        pattern="[\w]{3,}"
+        title="At least 3 letters"
       />
       <TextInput
         label="City"
@@ -47,6 +51,8 @@ const Order = () => {
         name="fname"
         value={zip_code}
         callaback={changeZipCode}
+        pattern="[\d]{2}-[\d]{3}"
+        title="e.g. 00-000"
       />
       <input type="submit" value="Order" />
     </form>

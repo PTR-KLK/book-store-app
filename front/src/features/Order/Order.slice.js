@@ -63,7 +63,10 @@ export const orderBooks = createAsyncThunk(
       body: JSON.stringify(body),
     })
       .then((res) => res.json())
-      .then((res) => thunkAPI.dispatch(responseOrder(res)));
+      .then((res) => {
+        thunkAPI.dispatch(responseOrder(res));
+        console.log(res);
+      });
   }
 );
 
