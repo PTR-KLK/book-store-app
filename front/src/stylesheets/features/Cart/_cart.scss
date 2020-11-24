@@ -1,1 +1,56 @@
 @import "./components/cartButton";
+@import "./components/cartItem";
+@import "../../colors";
+
+.cartSection {
+  padding-bottom: 1rem;
+
+  .cartSection__bookList,
+  .cartSection__navigation {
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  button,
+  .cartSection__orderButton {
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    color: $primary-light;
+  }
+
+  button {
+    background: $danger;
+    width: 100%;
+  }
+
+  .cartSection__orderButton {
+    background: $action;
+    margin: 0 1rem 1rem;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+  }
+
+  .cartSection__orderInfo {
+    background: $secondary-light;
+    margin: 1rem;
+    padding: 1rem 0;
+    text-align: center;
+  }
+
+  .cartSection__orderButton--inactive {
+    background: rgba($action, 0.4);
+  }
+
+  @media (min-width: $tablet) {
+    .cartSection__bookList,
+    .cartSection__navigation {
+      display: flex;
+      flex-direction: column;
+      max-width: 768px;
+      width: 100%;
+    }
+  }
+}
