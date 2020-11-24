@@ -1,0 +1,19 @@
+@import "./components/book";
+@import "./components/pager";
+@import "../../screen-sizes";
+
+.homeSection {
+  .homeSection__bookList {
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  @media (min-width: $tablet) {
+    .homeSection__bookList {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 768px;
+      width: 100%;
+    }
+  }
+}

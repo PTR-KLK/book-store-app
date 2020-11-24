@@ -16,7 +16,7 @@ const Home = () => {
   };
 
   return (
-    <ul>
+    <ul className="homeSection__pager">
       {Array(Math.ceil(total_records / 10))
         .fill()
         .map((el, idx) => (

@@ -24,8 +24,8 @@ const Home = () => {
   }
 
   return (
-    <section>
-      <ul>
+    <section className="homeSection">
+      <ul className="homeSection__bookList">
         {data.data.map((el) => (
           <li key={el.id}>
             <Book data={el} />

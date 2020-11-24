@@ -15,9 +15,13 @@ const CartButton = ({ item }) => {
   };
 
   return !!cart.find((el) => el.id === item.id) ? (
-    <button onClick={() => handleRemoveFromCart(item)}>Remove from Cart</button>
+    <button className="danger" onClick={() => handleRemoveFromCart(item)}>
+      Remove from Cart
+    </button>
   ) : (
-    <button onClick={() => handleAddToCart(item)}>Add to Cart</button>
+    <button className="action" onClick={() => handleAddToCart(item)}>
+      Add to Cart
+    </button>
   );
 };
 
