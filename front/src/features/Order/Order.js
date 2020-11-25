@@ -7,9 +7,8 @@ const Order = () => {
   const cart = useSelector(selectCart);
 
   return (
-    <section>
-      <p>Order page</p>
-      {cart.length > 0 ? <Form /> : <p>Nothing to order yet</p>}
+    <section className="orderSection">
+      {cart.length > 0 ? <Form /> : <p>Nothing to order, yet.</p>}
     </section>
   );
 };

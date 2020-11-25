@@ -1,0 +1,34 @@
+@import "../../../colors";
+
+form {
+  padding: 1rem;
+  margin: 1rem;
+  background-color: $secondary-light;
+  display: flex;
+  flex-direction: column;
+
+  input[type="submit"] {
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    width: 100%;
+    cursor: pointer;
+    border: none;
+    color: $primary-light;
+    background: $action;
+  }
+
+  @media (min-width: $mobile-large) {
+    input[type="submit"] {
+      width: 50%;
+      align-self: center;
+    }
+  }
+
+  @media (min-width: $tablet) {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem auto;
+    max-width: 768px;
+    width: 100%;
+  }
+}
