@@ -9,18 +9,18 @@ const Home = () => {
   const dispatch = useDispatch();
   const { data, loading, error, page } = useSelector(selectBooks);
 
-  const url = `http://localhost:3001/api/book?page=${page}`;
+  const url = `http://locast:3001/api/book?page=${page}`;
 
   useEffect(() => {
     dispatch(fetchBooks(url));
   }, [dispatch, url]);
 
   if (loading || !data.data) {
-    return <Loader msg="Loading..." />;
+    return <Loader msg="Loading books..." />;
   }
 
   if (error) {
-    return <Loader msg="Error" />;
+    return <Loader msg="Error fetching books from database." />;
   }
 
   return (

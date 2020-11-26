@@ -1,6 +1,7 @@
 @import "./components/book";
 @import "./components/pager";
 @import "../../screen-sizes";
+@import "../../colors";
 
 .homeSection {
   .homeSection__bookList {
@@ -15,5 +16,18 @@
       max-width: 768px;
       width: 100%;
     }
+  }
+}
+
+.loader {
+  width: calc(100% - 4rem);
+  text-align: center;
+  margin: 1rem;
+  padding: 1rem;
+  background-color: $secondary-light;
+
+  @media (min-width: $tablet) {
+    max-width: calc(768px - 4rem);
+    margin: 1rem auto;
   }
 }
