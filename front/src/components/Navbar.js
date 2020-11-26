@@ -1,7 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
+  const { pathname } = useLocation();
+
   return (
     <nav>
       <ul>
@@ -9,7 +11,9 @@ const Navbar = () => {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <h2>Book Store</h2>
+          <h2>
+            {pathname.replace("/", "") ? pathname.replace("/", "") : "Home"}
+          </h2>
         </li>
         <li>
           <Link to="/cart">Cart</Link>

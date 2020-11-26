@@ -9,7 +9,7 @@ const Home = () => {
   const dispatch = useDispatch();
   const { data, loading, error, page } = useSelector(selectBooks);
 
-  const url = `http://locast:3001/api/book?page=${page}`;
+  const url = `http://localhost:3001/api/book?page=${page}`;
 
   useEffect(() => {
     dispatch(fetchBooks(url));
