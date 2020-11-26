@@ -9,7 +9,7 @@ const Cart = () => {
 
   return (
     <section className="cartSection">
-      <ul className="cartSection__bookList">
+      <ul>
         {cart.length > 0 &&
           cart.map((el, idx) => {
             return (
@@ -18,23 +18,16 @@ const Cart = () => {
               </li>
             );
           })}
+        {cart.length === 0 ? <p>There is nothing to order, yet.</p> : null}
       </ul>
-      <div className="cartSection__navigation">
+      <span>
+        <Link to="/">Go Back</Link>
         {cart.length > 0 ? (
-          <Link className="cartSection__orderButton" to="/order">
-            Order
-          </Link>
+          <Link to="/order">Order</Link>
         ) : (
-          <>
-            <p className="cartSection__orderInfo">
-              There is nothing to order, yet.
-            </p>
-            <p className="cartSection__orderButton cartSection__orderButton--inactive">
-              Order
-            </p>
-          </>
+          <p className="inactive">Order</p>
         )}
-      </div>
+      </span>
     </section>
   );
 };

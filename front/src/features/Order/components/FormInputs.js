@@ -1,29 +1,20 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import {
   selectOrder,
   changeFirstName,
   changeLastName,
   changeCity,
   changeZipCode,
-  orderBooks,
 } from "../Order.slice";
 import TextInput from "./TextInput";
 
-const Order = () => {
-  const dispatch = useDispatch();
+const FormInputs = () => {
   const { first_name, last_name, city, zip_code } = useSelector(selectOrder);
 
-  const url = "http://localhost:3001/api/order";
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    dispatch(orderBooks(url));
-  };
-
   return (
-    <form onSubmit={handleSubmit}>
+    <>
+      {" "}
       <TextInput
         label="First Name"
         name="fname"
@@ -54,9 +45,8 @@ const Order = () => {
         pattern="[\d]{2}-[\d]{3}"
         title="e.g. 00-000"
       />
-      <input type="submit" value="Order" />
-    </form>
+    </>
   );
 };
 
-export default Order;
+export default FormInputs;

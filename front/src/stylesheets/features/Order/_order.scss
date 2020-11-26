@@ -1,18 +1,48 @@
-@import "./components/form.scss";
 @import "./components//textInput.scss";
 @import "../../colors";
 
-.orderSection {
-  p {
-    padding: 1rem;
-    margin: 1rem;
-    background: $secondary-light;
-    text-align: center;
+form {
+  margin: 1rem;
 
-    @media (min-width: $tablet) {
-      margin: 1rem auto;
-      max-width: 768px;
-      width: 100%;
+  section {
+    padding: 1rem;
+    margin: 0 1rem 1rem;
+    background-color: $secondary-light;
+  }
+
+  p {
+    text-align: center;
+    margin: 0;
+  }
+
+  span {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    input[type="submit"],
+    a {
+      background: $action;
+      padding: 0.5rem 0.75rem;
+      margin: 0 1rem;
+      font-size: 1rem;
+      width: 50%;
+      cursor: pointer;
+      justify-content: center;
+      text-decoration: none;
+      text-align: center;
+      border: none;
+      color: $secondary-light;
     }
+
+    input[type="submit"]:disabled {
+      background: rgba($action, 0.4);
+    }
+  }
+
+  @media (min-width: $tablet) {
+    margin: 1rem auto;
+    max-width: 768px;
+    width: 100%;
   }
 }

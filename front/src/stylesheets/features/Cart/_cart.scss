@@ -4,14 +4,15 @@
 .cartSection {
   padding-bottom: 1rem;
 
-  .cartSection__bookList,
-  .cartSection__navigation {
+  ul,
+  span {
     padding: 0;
     margin: 0 auto;
   }
 
   button,
-  .cartSection__orderButton {
+  span a,
+  span p {
     padding: 0.5rem 0.75rem;
     font-size: 1rem;
     cursor: pointer;
@@ -24,32 +25,43 @@
     width: 100%;
   }
 
-  .cartSection__orderButton {
-    background: $action;
-    margin: 0 1rem 1rem;
-    display: flex;
-    justify-content: center;
-    text-decoration: none;
-  }
-
-  .cartSection__orderInfo {
+  ul > p {
     background: $secondary-light;
-    margin: 1rem;
+    margin: 0 1rem 1rem;
     padding: 1rem 0;
     text-align: center;
   }
 
-  .cartSection__orderButton--inactive {
-    background: rgba($action, 0.4);
-  }
+  span {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 
-  @media (min-width: $tablet) {
-    .cartSection__bookList,
-    .cartSection__navigation {
+    a,
+    p {
+      background: $action;
+      width: 50%;
+      margin: 0 1rem;
+      display: flex;
+      justify-content: center;
+      text-decoration: none;
+    }
+
+    .inactive {
+      background: rgba($action, 0.4);
+    }
+  }
+}
+
+@media (min-width: $tablet) {
+  .cartSection {
+    margin: 1rem auto;
+    max-width: 768px;
+    width: 100%;
+
+    ul {
       display: flex;
       flex-direction: column;
-      max-width: 768px;
-      width: 100%;
     }
   }
 }
