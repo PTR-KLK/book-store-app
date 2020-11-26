@@ -12,7 +12,7 @@ const Navbar = () => {
         </li>
         <li>
           <h2>
-            {pathname.replace("/", "") ? pathname.replace("/", "") : "Home"}
+            {pathname.replace("/", "") ? pathname.replace("/", "") : "home"}
           </h2>
         </li>
         <li>
