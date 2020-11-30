@@ -67,7 +67,6 @@ export const orderBooks = createAsyncThunk(
       .then((res) => {
         thunkAPI.dispatch(responseOrder(res));
         thunkAPI.dispatch(clearCart());
-        console.log(res);
       });
   }
 );
